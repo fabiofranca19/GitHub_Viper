@@ -9,16 +9,22 @@
 import Foundation
 
 protocol HomeUseCase {
-    func getRepositories() -> String
+    func getRepositories(completion: @escaping RepositoriesClosure)
 }
 
 class HomeInteractor {
+    var service: RepositoriesAPI
     
+    init(service: RepositoriesAPI) {
+        self.service = service
+    }
 }
 
 extension HomeInteractor: HomeUseCase {
-    func getRepositories() -> String {
-        return "Viper"
+    func getRepositories(completion: @escaping RepositoriesClosure) {
+        service.fetchRepositories { (repositories) in
+            completion(repositories)
+        }
     }
 
 }

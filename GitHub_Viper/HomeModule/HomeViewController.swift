@@ -9,13 +9,16 @@
 import UIKit
 
 protocol HomeView {
-    func updateTitle(repositorie: Repositories)
+    func updateRepositories(repositories: [Repositorie])
 }
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     var presenter: HomePresentation?
+    
+    var repositories = [Repositorie]()
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +29,10 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeView {
-    func updateTitle(repositorie: Repositories) {
+    func updateRepositories(repositories: [Repositorie]) {
         DispatchQueue.main.async {
-            
+            self.repositories += repositories
+            print(repositories)
         }
     }
 }

@@ -4,8 +4,8 @@
 target 'GitHub_Viper' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
   # Pods for GitHub_Viper
+	pod 'Alamofire', '~> 5.2'
 
   target 'GitHub_ViperTests' do
     inherit! :search_paths

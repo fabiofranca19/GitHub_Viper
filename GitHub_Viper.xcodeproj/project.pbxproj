@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A94E56D3A3B772C9BB926985 /* Pods_GitHub_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C29361BCA379FA6CFFDA8C /* Pods_GitHub_Viper.framework */; };
+		E611460A25087C7F00B0719E /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611460925087C7F00B0719E /* HttpService.swift */; };
+		E611460C25087D8000B0719E /* HttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611460B25087D8000B0719E /* HttpRouter.swift */; };
+		E611460E25087FB900B0719E /* RepositoriesHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611460D25087FB900B0719E /* RepositoriesHttpService.swift */; };
+		E61146102508817E00B0719E /* RepositoriesHttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611460F2508817E00B0719E /* RepositoriesHttpRouter.swift */; };
+		E611461425088A3D00B0719E /* RepositoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611461325088A3D00B0719E /* RepositoriesAPI.swift */; };
+		E611461625088B6C00B0719E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611461525088B6C00B0719E /* User.swift */; };
+		E611461825088C7200B0719E /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611461725088C7200B0719E /* RepositoriesService.swift */; };
 		E6C759F42507D5EA004466B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C759F32507D5EA004466B4 /* AppDelegate.swift */; };
 		E6C759F62507D5EA004466B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C759F52507D5EA004466B4 /* SceneDelegate.swift */; };
 		E6C759F82507D5EA004466B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C759F72507D5EA004466B4 /* HomeViewController.swift */; };
@@ -41,6 +48,13 @@
 		49C29361BCA379FA6CFFDA8C /* Pods_GitHub_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78738022E0A15FED6D6B03C8 /* Pods-GitHub_Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub_Viper.release.xcconfig"; path = "Target Support Files/Pods-GitHub_Viper/Pods-GitHub_Viper.release.xcconfig"; sourceTree = "<group>"; };
 		7E6CC08893B672A6932F3FD4 /* Pods-GitHub_ViperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub_ViperTests.release.xcconfig"; path = "Target Support Files/Pods-GitHub_ViperTests/Pods-GitHub_ViperTests.release.xcconfig"; sourceTree = "<group>"; };
+		E611460925087C7F00B0719E /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		E611460B25087D8000B0719E /* HttpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRouter.swift; sourceTree = "<group>"; };
+		E611460D25087FB900B0719E /* RepositoriesHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesHttpService.swift; sourceTree = "<group>"; };
+		E611460F2508817E00B0719E /* RepositoriesHttpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesHttpRouter.swift; sourceTree = "<group>"; };
+		E611461325088A3D00B0719E /* RepositoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesAPI.swift; sourceTree = "<group>"; };
+		E611461525088B6C00B0719E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E611461725088C7200B0719E /* RepositoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
 		E6C759F02507D5EA004466B4 /* GitHub_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C759F32507D5EA004466B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6C759F52507D5EA004466B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +114,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E61146082508762B00B0719E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E6114611250887BA00B0719E /* Repositories */,
+				E611460925087C7F00B0719E /* HttpService.swift */,
+				E611460B25087D8000B0719E /* HttpRouter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E6114611250887BA00B0719E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E611460D25087FB900B0719E /* RepositoriesHttpService.swift */,
+				E611460F2508817E00B0719E /* RepositoriesHttpRouter.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E6114612250888A100B0719E /* HttpServices */ = {
+			isa = PBXGroup;
+			children = (
+				E611461325088A3D00B0719E /* RepositoriesAPI.swift */,
+				E611461725088C7200B0719E /* RepositoriesService.swift */,
+			);
+			path = HttpServices;
+			sourceTree = "<group>";
+		};
 		E6C759E72507D5EA004466B4 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +165,8 @@
 		E6C759F22507D5EA004466B4 /* GitHub_Viper */ = {
 			isa = PBXGroup;
 			children = (
+				E6114612250888A100B0719E /* HttpServices */,
+				E61146082508762B00B0719E /* Service */,
 				E6C75A2525081DB6004466B4 /* Resource */,
 				E6C75A202507D977004466B4 /* Models */,
 				E6C75A182507D80E004466B4 /* HomeModule */,
@@ -158,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				E6C75A21250804DA004466B4 /* Repositories.swift */,
+				E611461525088B6C00B0719E /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +229,7 @@
 				E6C759EC2507D5EA004466B4 /* Sources */,
 				E6C759ED2507D5EA004466B4 /* Frameworks */,
 				E6C759EE2507D5EA004466B4 /* Resources */,
+				D3A562802FBA529035248A33 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -312,6 +358,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub_ViperTests/Pods-GitHub_ViperTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3A562802FBA529035248A33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHub_Viper/Pods-GitHub_Viper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHub_Viper/Pods-GitHub_Viper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub_Viper/Pods-GitHub_Viper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E9C6F80494B74E6C27E022E4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,15 +404,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E611461425088A3D00B0719E /* RepositoriesAPI.swift in Sources */,
 				E6C759F82507D5EA004466B4 /* HomeViewController.swift in Sources */,
+				E611460E25087FB900B0719E /* RepositoriesHttpService.swift in Sources */,
+				E61146102508817E00B0719E /* RepositoriesHttpRouter.swift in Sources */,
 				E6C75A1C2507D911004466B4 /* HomeRouter.swift in Sources */,
 				E6C759FE2507D5EA004466B4 /* GitHub_Viper.xcdatamodeld in Sources */,
 				E6C75A242508053D004466B4 /* HomeModuleBuilder.swift in Sources */,
+				E611460C25087D8000B0719E /* HttpRouter.swift in Sources */,
+				E611461625088B6C00B0719E /* User.swift in Sources */,
 				E6C759F42507D5EA004466B4 /* AppDelegate.swift in Sources */,
 				E6C75A1A2507D8E3004466B4 /* HomePresenter.swift in Sources */,
 				E6C75A22250804DA004466B4 /* Repositories.swift in Sources */,
 				E6C759F62507D5EA004466B4 /* SceneDelegate.swift in Sources */,
+				E611461825088C7200B0719E /* RepositoriesService.swift in Sources */,
 				E6C75A1E2507D945004466B4 /* HomeInteractor.swift in Sources */,
+				E611460A25087C7F00B0719E /* HttpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

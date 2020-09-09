@@ -13,7 +13,7 @@ class HomeModuleBuilder {
     static func build() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-        let interactor = HomeInteractor()
+        let interactor = HomeInteractor(service: RepositoriesService.shared)
         let router = HomeRouter(viewController: viewController)
         let presenter = HomePresenter(viewController: viewController, interactor: interactor, router: router)
         viewController.presenter = presenter

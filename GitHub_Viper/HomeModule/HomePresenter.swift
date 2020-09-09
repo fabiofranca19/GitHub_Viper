@@ -12,6 +12,22 @@ protocol HomePresentation {
     func viewDidLoad()
 }
 
+struct RepositorieViewModel {
+    var name: String?
+    var stars: Int?
+    var description: String?
+    var login: String?
+    var imageUrl: String?
+    
+    init(repositorieModel: Repositorie) {
+        self.name = repositorieModel.name
+        self.stars = repositorieModel.stars
+        self.description = repositorieModel.description
+        self.login = repositorieModel.owner.login
+        self.imageUrl = repositorieModel.owner.imageUrl
+    }
+}
+
 class HomePresenter {
     
     var viewController: HomeView
@@ -31,10 +47,9 @@ class HomePresenter {
 
 extension HomePresenter: HomePresentation {
     func viewDidLoad() {
-        let title = interactor.getRepositories()
-        //let repositories = createRepositories(title: title)
-        
-        //viewController.updateTitle(repositorie: repositories)
+        interactor.getRepositories { (repositories) in
+            self.viewController.updateRepositories(repositories: repositories)
+        }
     }
     
     
