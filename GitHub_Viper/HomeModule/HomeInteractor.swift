@@ -10,6 +10,7 @@ import Foundation
 
 protocol HomeUseCase {
     func getRepositories(completion: @escaping RepositoriesClosure)
+    func fetchImage(imageUrl: String, completion: @escaping ImageClosure)
 }
 
 class HomeInteractor {
@@ -21,10 +22,19 @@ class HomeInteractor {
 }
 
 extension HomeInteractor: HomeUseCase {
+    func fetchImage(imageUrl: String, completion: @escaping ImageClosure) {
+        guard let service = service as? ImageAPI else{ return }
+        service.fetchImage(imageUrl: imageUrl) { (data) in
+            completion(data)
+        }
+    }
+    
     func getRepositories(completion: @escaping RepositoriesClosure) {
         service.fetchRepositories { (repositories) in
             completion(repositories)
         }
     }
+    
+    
 
 }

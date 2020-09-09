@@ -6,7 +6,7 @@
 //  Copyright © 2020 com.fabiofranca. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol HomePresentation {
     func viewDidLoad()
@@ -17,14 +17,14 @@ struct RepositorieViewModel {
     var stars: Int?
     var description: String?
     var login: String?
-    var imageUrl: String?
+    var image: UIImage?
     
-    init(repositorieModel: Repositorie) {
+    init(repositorieModel: Repositorie, imageData: Data) {
         self.name = repositorieModel.name
         self.stars = repositorieModel.stars
         self.description = repositorieModel.description
         self.login = repositorieModel.owner.login
-        self.imageUrl = repositorieModel.owner.imageUrl
+        self.image = UIImage(data: imageData)
     }
 }
 
@@ -40,15 +40,46 @@ class HomePresenter {
         self.router = router
     }
     
-    func createRepositories(title: String){
+    private func onFetchImage(imageUrl: String, completion: @escaping ImageClosure) {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.interactor.fetchImage(imageUrl: imageUrl) { (result) in
+                completion(result)
+            }
+        }
+    }
+    
+    private func onFetchRepositories(completion: @escaping RepositoriesClosure) {
+        self.interactor.getRepositories(completion: { (result) in
+            completion(result)
+        })
+    }
+    
+    func getViewModels(completion: @escaping ([RepositorieViewModel]) -> Void) {
+        let myGroup = DispatchGroup()
+        var viewModels = [RepositorieViewModel]()
         
+        onFetchRepositories { (resultRepositories) in
+            for repositorie in resultRepositories {
+                myGroup.enter()
+                self.onFetchImage(imageUrl: repositorie.owner.imageUrl) { (imageData) in
+                    let viewModel = RepositorieViewModel(repositorieModel: repositorie, imageData: imageData ?? Data())
+                    viewModels.append(viewModel)
+                    
+                    myGroup.leave()
+                }
+            }
+            
+            myGroup.notify(queue: .main) {
+                completion(viewModels)
+            }
+        }
     }
 }
 
 extension HomePresenter: HomePresentation {
     func viewDidLoad() {
-        interactor.getRepositories { (repositories) in
-            self.viewController.updateRepositories(repositories: repositories)
+        self.getViewModels { (viewModels) in
+            self.viewController.updateRepositories(repositories: viewModels)
         }
     }
     

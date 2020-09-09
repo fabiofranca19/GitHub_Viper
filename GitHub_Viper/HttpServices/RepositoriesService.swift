@@ -39,10 +39,19 @@ extension RepositoriesService: RepositoriesAPI {
             debugPrint("Something wrong while fetching repositories: \(error.localizedDescription)")
         }
     }
-    
     func fetchUser(completion: @escaping UserClosure) {
         
     }
-    
-    
+}
+
+extension RepositoriesService: ImageAPI {
+    func fetchImage(imageUrl:String,completion: @escaping ImageClosure) {
+        do{
+            try RepositoriesHttpRouter.dowloadUserImage(imageUrl: imageUrl).request(usingHttpService: httpService).responseData(completionHandler: { (result) in
+                completion(result.data)
+            })
+        }catch{
+            debugPrint("Something wrong while fetching images: \(error.localizedDescription)")
+        }
+    }
 }

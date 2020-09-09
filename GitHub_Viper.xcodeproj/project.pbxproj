@@ -15,6 +15,7 @@
 		E611461425088A3D00B0719E /* RepositoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611461325088A3D00B0719E /* RepositoriesAPI.swift */; };
 		E611461625088B6C00B0719E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611461525088B6C00B0719E /* User.swift */; };
 		E611461825088C7200B0719E /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611461725088C7200B0719E /* RepositoriesService.swift */; };
+		E611461C2509499300B0719E /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611461B2509499300B0719E /* ImageAPI.swift */; };
 		E6C759F42507D5EA004466B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C759F32507D5EA004466B4 /* AppDelegate.swift */; };
 		E6C759F62507D5EA004466B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C759F52507D5EA004466B4 /* SceneDelegate.swift */; };
 		E6C759F82507D5EA004466B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C759F72507D5EA004466B4 /* HomeViewController.swift */; };
@@ -55,6 +56,7 @@
 		E611461325088A3D00B0719E /* RepositoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesAPI.swift; sourceTree = "<group>"; };
 		E611461525088B6C00B0719E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E611461725088C7200B0719E /* RepositoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
+		E611461B2509499300B0719E /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		E6C759F02507D5EA004466B4 /* GitHub_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C759F32507D5EA004466B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6C759F52507D5EA004466B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				E611461325088A3D00B0719E /* RepositoriesAPI.swift */,
+				E611461B2509499300B0719E /* ImageAPI.swift */,
 				E611461725088C7200B0719E /* RepositoriesService.swift */,
 			);
 			path = HttpServices;
@@ -191,9 +194,9 @@
 			children = (
 				E6C759F72507D5EA004466B4 /* HomeViewController.swift */,
 				E6C75A192507D8E3004466B4 /* HomePresenter.swift */,
-				E6C75A1B2507D911004466B4 /* HomeRouter.swift */,
-				E6C75A1D2507D945004466B4 /* HomeInteractor.swift */,
 				E6C75A232508053D004466B4 /* HomeModuleBuilder.swift */,
+				E6C75A1D2507D945004466B4 /* HomeInteractor.swift */,
+				E6C75A1B2507D911004466B4 /* HomeRouter.swift */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				E611460C25087D8000B0719E /* HttpRouter.swift in Sources */,
 				E611461625088B6C00B0719E /* User.swift in Sources */,
 				E6C759F42507D5EA004466B4 /* AppDelegate.swift in Sources */,
+				E611461C2509499300B0719E /* ImageAPI.swift in Sources */,
 				E6C75A1A2507D8E3004466B4 /* HomePresenter.swift in Sources */,
 				E6C75A22250804DA004466B4 /* Repositories.swift in Sources */,
 				E6C759F62507D5EA004466B4 /* SceneDelegate.swift in Sources */,
